@@ -11,8 +11,8 @@ projs = {
 	    units: 'm'
 	},
 	'EPSG:2856': {
-	    maxResolution: ((781043.7173 - 187754.6365) / 256.0),
-	    maxExtent: new OpenLayers.Bounds(187754.6365, 30497.7688, 781043.7173, 259585.0321),
+	    maxResolution: ((35565897 + 35263601) / 256.0),
+	    maxExtent: new OpenLayers.Bounds(-35263601,-28415931, 35565897,23373380),
 	    units: 'm'
 	}
 };
