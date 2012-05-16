@@ -1,0 +1,2 @@
+shp2pgsql -s 4326 -W LATIN1 50m_admin_0_countries.shp countries | psql -d tissot
+shp2pgsql -s 4326 tissot_4326.shp tissot | psql -d tissot
