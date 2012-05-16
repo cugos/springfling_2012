@@ -1,0 +1,90 @@
+MAP
+  NAME TISSOT
+  UNITS DD
+  EXTENT -180 -90 180 90
+  IMAGETYPE PNG
+
+  # This is for the WMS requests
+  OUTPUTFORMAT
+    NAME PNG
+    DRIVER 'GD/PNG'
+    MIMETYPE 'image/png'
+    IMAGEMODE RGBA
+    EXTENSION "png"
+    TRANSPARENT ON
+    FORMATOPTION "INTERLACE=OFF"
+  END
+
+  OUTPUTFORMAT
+    NAME GEOTIFF
+    DRIVER 'GDAL/GTiff'
+    MIMETYPE 'image/tiff'
+    IMAGEMODE BYTE
+    EXTENSION 'tif'
+  END
+
+  PROJECTION
+    "init=epsg:4326"
+  END
+
+  WEB
+    IMAGEPATH "/mnt/z-raid6/projects/springfling_2012/tmp/"
+    IMAGEURL "/tmp/"
+    LOG "/mnt/z-raid6/projects/springfling_2012/logs/mapserver.log"
+    METADATA
+      WMS_TITLE "TISSOT"
+      WMS_ABSTRACT "TISSOT WMS"
+      WMS_ACCESSCONSTRAINTS "none"
+      WMS_ONLINERESOURCE "http://springfling_2012.openbasemap.org/cgi-bin/tissot"
+      WMS_SRS "EPSG:900913"
+    END
+  END
+
+  LAYER
+    NAME "LAND"
+    DATA "/mnt/z-raid6/projects/springfling_2012/tissot/50m_admin_0_countries.shp"
+    OPACITY 90
+    METADATA
+      WMS_TITLE "LAND"
+      WMS_SRS "EPSG:900913"
+    END
+    TYPE POLYGON
+    STATUS ON
+    PROJECTION
+      "init=epsg:4326"
+    END
+    CLASS
+      NAME "land"
+      STYLE
+        COLOR 0 255 0
+        OUTLINECOLOR 0 0 0
+        WIDTH 1
+      END # STYLE
+    END # CLASS
+  END
+
+  LAYER
+    NAME "TISSOT"
+    DATA "/mnt/z-raid6/projects/springfling_2012/tissot/tissot_4326.shp"
+    OPACITY 75
+    METADATA
+      WMS_TITLE "TISSOT"
+      WMS_SRS "EPSG:900913"
+    END
+    TYPE POLYGON
+    STATUS ON
+    PROJECTION
+      "init=epsg:4326"
+    END
+    CLASS
+      NAME "circles"
+      STYLE
+        OUTLINECOLOR 0 0 0
+        COLOR 0 0 255
+        WIDTH 2
+      END # STYLE
+    END # CLASS
+  END
+
+
+END
