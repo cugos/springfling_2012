@@ -36,7 +36,7 @@ MAP
       WMS_ABSTRACT "TISSOT WMS"
       WMS_ACCESSCONSTRAINTS "none"
       WMS_ONLINERESOURCE "http://springfling_2012.openbasemap.org/cgi-bin/tissot"
-      WMS_SRS "EPSG:900913"
+      WMS_SRS "EPSG:900913 EPSG:32610"
     END
   END
 
